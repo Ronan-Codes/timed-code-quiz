@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+
+    <title>Timed Coding Quiz</title>
+</head>
+
+<body>
+    <!--Create Navbar which includes: HighScore and Timer-->
+    <nav class="navbar">
+        <button type="button" class="highBtn" id="high-score">Show High Score</button>
+
+        <div class="navbar-1 h1 ml-auto timer">
+            Timer: <span id="time">75</span>
+        </div>
+    </nav>
+
+    <div id="contentDiv">
+
+    </div>
+
+    <!--Questions-->
+    <div class="card question mb-3 mx-auto" id="card-div">
+        <div class="card-body" id="card-text">
+        </div>
+
+        <!--Buttons-->
+        <div class="btn-verticle mx-auto" id="list-div">
+        </div>
+
+        <div>
+            <hr>
+            <p id="answer-check"></p>
+        </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
