@@ -78,7 +78,7 @@ var highScoreBtn = document.getElementById("high-score");
 var timeCounter = document.getElementById("time");
 var aCheckText = document.getElementById("answer-check");
 
-//function to remove child buttons
+//remove child buttons
 function resetVars() {
     timeLeft = 75;
     qIndex = 0;
@@ -86,14 +86,14 @@ function resetVars() {
     numCorrect = 0;
 }
 
-//function to remove buttons from html
+//remove buttons from html
 function removeBtns() {
     while (listDiv.firstChild) {
         listDiv.removeChild(listDiv.firstChild);
     }
 };
 
-//function to show if answer was correct or wrong
+//show if answer was correct or wrong
 function answerCheck(correct) {
     if (correct) {
         aCheckText.textContent = "correct";
@@ -106,12 +106,12 @@ function answerCheck(correct) {
     }, 500);
 }
 
-// function render start button and to start timer
+//render start button and to start timer
 function startGame() {
     removeBtns();
     resetVars();
 
-    //initiate highScores
+    //start highScores
     storedScores = JSON.parse(localStorage.getItem("highScores"));
     if (storedScores !== null) {
         highScores = storedScores;
@@ -129,7 +129,7 @@ function startGame() {
     listDiv.appendChild(startBtn);
 };
 
-//function that display the question at the index of the array
+//that display the question at the index of the array
 function displayQ(index) {
     removeBtns();
 

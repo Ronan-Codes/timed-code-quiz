@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.form-control{
+.form-control {
     font-size: 20px;
 }
 
@@ -15,14 +15,15 @@ body {
 
 }
 
- .mb-2 {
-     margin: 0, 10px;
- }
+.mb-2 {
+    margin: 0, 10px;
+}
 
 
-.navbar-brand, .navbar{
+.navbar-brand,
+.navbar {
     background-color: #E27D60;
-    color:whitesmoke;
+    color: whitesmoke;
     padding: 22px;
     display: flex;
     justify-content: space-between;
@@ -38,7 +39,7 @@ body {
     border: none;
 }
 
-.highBtn{
+.highBtn {
     background-color: #E27D60;
     color: black;
     font-size: 22px;
@@ -51,14 +52,14 @@ body {
     background-color: #659DBD;
 }
 
-.navbar-1{
+.navbar-1 {
     border: none;
     color: black;
     font-size: 22px;
     font-weight: bolder;
 }
 
-.btn{
+.btn {
     margin-top: 11px;
     background-color: rgb(218, 218, 218);
     color: black;
@@ -66,7 +67,7 @@ body {
     border-radius: 10px;
 }
 
-#card-text{
+#card-text {
     text-align: left;
 }
 
@@ -75,7 +76,7 @@ body {
     color: whitesmoke;
 }
 
-#card-div{
+#card-div {
     width: 50%;
     margin-left: auto;
     margin-right: auto;
