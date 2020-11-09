@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-1. [Description] (#Description)
-2. [GitHub Repo and Deployment] (#GitHub-Repo-and-Deployment)
-3. [Screenshots] (#Screenshots)
-4. [Technologies] (#Technologies)
+1. [Description](#Description)
+2. [GitHub Repo and Deployment](#GitHub-Repo-and-Deployment)
+3. [Screenshots](#Screenshots)
+4. [Technologies](#Technologies)
 
 ## Description
 
@@ -19,10 +19,10 @@
 * Deployment - https://galv-ronan.github.io/timed-code-quiz/
 
 ## Screenshots
-![Screenshot 1] (./assets/images/screenshot1.png)
-![Screenshot 2] (./assets/images/screenshot2.png)
-![Screenshot 3] (./assets/images/screenshot3.png)
-![Screenshot 4] (./assets/images/screenshot4.png)
+![Screenshot 1](./assets/images/screenshot1.png)
+![Screenshot 2](./assets/images/screenshot2.png)
+![Screenshot 3](./assets/images/screenshot3.png)
+![Screenshot 4](./assets/images/screenshot4.png)
 
 ## Technologies
 
