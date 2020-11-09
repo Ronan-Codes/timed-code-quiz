@@ -74,9 +74,9 @@ var numCorrect = 0;
 //DOM Elements
 var listDiv = document.getElementById("list-div");
 var cardTextDiv = document.getElementById("card-text");
-var highScoreBtn = document.getElementById("high-score");
+var highScoreBtn = document.getElementById("high-score-button");
 var timeCounter = document.getElementById("time");
-var aCheckText = document.getElementById("answer-check");
+var aCheckText = document.getElementById("check-answer");
 
 //remove child buttons
 function resetVars() {
