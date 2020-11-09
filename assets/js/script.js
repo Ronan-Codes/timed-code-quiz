@@ -118,7 +118,7 @@ function startGame() {
     }
 
     //get card-body by id and set text
-    cardTextDiv.textContent = "There are 10 questions, each wrong anwer will cost you 5 seconds. How fast can you get through them? Click the Start button to start Quiz";
+    cardTextDiv.textContent = "Answer 10 questions. Each wrong anwer will cost you 5 seconds. Answer as fast as you can and beat the high score. Click the Start button to begin!";
 
     // add start button
     var startBtn = document.createElement("button");
