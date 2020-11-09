@@ -68,3 +68,66 @@ startBtn.setAttribute("class", "btn");
 startBtn.setAttribute("id", "start");
 startBtn.textContent = "Start";
 listDiv.appendChild(startBtn);
+
+//function to remove child buttons
+function removeBtns(){
+    while(listDiv.firstChild) {
+      listDiv.removeChild(listDiv.firstChild);
+    }
+  }
+
+  // function render start button and to start timer
+  function startGame(){
+    removeBtns();
+    win = false;
+    //get card-body by id and set text
+    cardTextDiv.textContent = "There are 10 questions, each wrong anwer will cost you 5 seconds. How fast can you get through them? Click the Start button to start Quiz";
+
+    // add start button
+    var startBtn = document.createElement("button");
+    startBtn.setAttribute("class", "btn");
+    startBtn.textContent = "Start";
+    listDiv.appendChild(startBtn);
+  };
+
+  function displayQ(index){
+    removeBtns();
+
+    //displayquestion
+    cardTextDiv.textContent = questions[index].question;
+
+    //create answer buttons
+    for(i = 0; i < questions[index].choices.length; i++){
+      var choiceBtn = document.createElement("button");
+      choiceBtn.setAttribute("class", "btn");
+      choiceBtn.textContent = questions[index].choices[i];
+      listDiv.appendChild(choiceBtn);
+      listDiv.appendChild(document.createElement("br"));
+    }
+
+  }
+
+  function playGame(){
+
+
+    //visble countdown timer
+    var timer = setInterval(function(){
+      timeCounter.textContent = timeLeft;
+      timeLeft--;
+
+      //end game and timer when done
+      if(timeLeft <= 0 || win){
+        clearInterval(timer);
+        endGame();
+      }
+    }, 1000);
+
+    //ask first question
+    displayQ(qIndex);
+  }
+
+  function endGame(){
+
+  }
+
+  displayQ(qIndex); 
