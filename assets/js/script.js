@@ -58,63 +58,71 @@ var highScoreBtn = document.getElementById("high-score");
 var timeCounter = document.getElementById("time");
 var aCheckText = document.getElementById("answer-check");
 
-//get card-body by id and set text
-cardTextDiv.textContent = "There are 10 questions, each wrong anwer will cost you 5 seconds. How fast can you get through them? Click the Start button to start Quiz";
-
-// add start button
-var startBtn = document.createElement("button");
-startBtn.setAttribute("type", "button");
-startBtn.setAttribute("class", "btn");
-startBtn.setAttribute("id", "start");
-startBtn.textContent = "Start";
-listDiv.appendChild(startBtn);
-
 //function to remove child buttons
-function removeBtns(){
+function resetVars(){
+    timeLeft = 75;
+    qIndex = 0;
+    win = false;
+    numCorrect = 0
+  }
+
+  //function to remove buttons from html
+  function removeBtns(){
     while(listDiv.firstChild) {
       listDiv.removeChild(listDiv.firstChild);
     }
+  };
+
+  //function to show if answer was correct or wrong
+  function answerCheck(correct){
+    if(correct){
+      aCheckText.textContent = "correct";
+    }else{
+      aCheckText.textContent = "wrong";
+    }
+
+  var setTO = setTimeout(function(){
+    aCheckText.textContent = "";
+  }, 500);
   }
 
   // function render start button and to start timer
   function startGame(){
     removeBtns();
-    win = false;
+    resetVars();
     //get card-body by id and set text
     cardTextDiv.textContent = "There are 10 questions, each wrong anwer will cost you 5 seconds. How fast can you get through them? Click the Start button to start Quiz";
-
     // add start button
     var startBtn = document.createElement("button");
+    startBtn.setAttribute("type", "button");
     startBtn.setAttribute("class", "btn");
+    startBtn.setAttribute("id", "start");
     startBtn.textContent = "Start";
     listDiv.appendChild(startBtn);
   };
-
   function displayQ(index){
     removeBtns();
-
     //displayquestion
     cardTextDiv.textContent = questions[index].question;
-
     //create answer buttons
     for(i = 0; i < questions[index].choices.length; i++){
       var choiceBtn = document.createElement("button");
+      choiceBtn.setAttribute("type", "button");
       choiceBtn.setAttribute("class", "btn");
+      choiceBtn.setAttribute("id", i);
       choiceBtn.textContent = questions[index].choices[i];
       listDiv.appendChild(choiceBtn);
       listDiv.appendChild(document.createElement("br"));
     }
-
-  }
-
+  };
   function playGame(){
-
+    win = false;
+    numCorrect = 0;
 
     //visble countdown timer
     var timer = setInterval(function(){
       timeCounter.textContent = timeLeft;
       timeLeft--;
-
       //end game and timer when done
       if(timeLeft <= 0 || win){
         clearInterval(timer);
@@ -124,10 +132,51 @@ function removeBtns(){
 
     //ask first question
     displayQ(qIndex);
-  }
+  };
+  function checkButton(event){
+    var targetId = parseInt(event.target.id);
+      //check answer if correct
+      if(targetId === questions[qIndex].correctIndex){
+        numCorrect++;
+        qIndex++;
+        aCheckText.textContent = "correct";
+        correct = true;
+        answerCheck(correct);
+        //If there are more questions, display next, else end game
+        if(qIndex < questions.length){
+          displayQ(qIndex);
+        }else{
+          win = true;
+          endGame();
+        }
+      }else{
+        timeLeft -= 5;
+        aCheckText.textContent = "wrong"
+        correct = false;
+        answerCheck(correct);
+      }
+  };
 
   function endGame(){
+    removeBtns();
+    //If all questions were answered, else if not
+    if(qIndex === questions.length){
+      cardTextDiv.textContent = "You correctly answered all 10.  You had " + timeLeft + " seconds left!";
+      //create form to add high score
 
-  }
-
-  displayQ(qIndex); 
+    }
+  };
+  function displayHS(){
+  };
+  // event listeners for button clicks
+  listDiv.addEventListener("click", function(event){
+    if(event.target.matches("button")){
+      if(event.target.id === "start"){
+        playGame();
+      }else{
+        checkButton(event);
+      }
+    }
+  });
+  highScoreBtn.addEventListener("click", displayHS);
+  startGame();
