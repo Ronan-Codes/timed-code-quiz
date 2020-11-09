@@ -5,7 +5,7 @@ var qObj0 = {question: "Commonly used data types DO NOT include:",
 
 var qObj1 = {question: "Arrays in JavaScript can be used to store what?",
     choices: ["1. numbers and strings", "2. other arrays", "3. booleans", "4. all of the above"],
-    correctIndex: 4};
+    correctIndex: 3};
 
 var qObj2 = {question: "what is the correct syntax for external script called \"xxx.js\"",
     choices: ["1. <script ref=\"xxx.js\">", "2. <script name=\"xxx.js\">", "3. <script div=\"xxx.js\">", "4. <script src=\"xxx.js>\">"],
@@ -39,15 +39,7 @@ var qObj9 = {question: "Which of the following function of String object returns
     choices: ["toUpperCase()", "toLowerCase()", "toString()"],
     correctIndex: 0};
 
-var questions = [qObj0, qObj1, qObj2, qObj3, qObj4, qObj5, qObj6, qObj7, qObj8, qObj9;
-
-//DOM Elements
-
-var listDiv = document.getElementById("list-div");
-var cardTextDiv = document.getElementById("card-text");
-var highScoreBtn = document.getElementById("high-score");
-var timeCounter = document.getElementById("time");
-var aCheckText = document.getElementById("answer-check");
+var questions = [qObj0, qObj1, qObj2, qObj3, qObj4, qObj5, qObj6, qObj7, qObj8, qObj9];
 
 //Other global variables
 var qIndex = 0;
@@ -57,3 +49,22 @@ var correct = false;
 var highScores = [];
 var hsStr ="";
 var numCorrect = 0;
+
+
+//DOM Elements
+var listDiv = document.getElementById("list-div");
+var cardTextDiv = document.getElementById("card-text");
+var highScoreBtn = document.getElementById("high-score");
+var timeCounter = document.getElementById("time");
+var aCheckText = document.getElementById("answer-check");
+
+//get card-body by id and set text
+cardTextDiv.textContent = "There are 10 questions, each wrong anwer will cost you 5 seconds. How fast can you get through them? Click the Start button to start Quiz";
+
+// add start button
+var startBtn = document.createElement("button");
+startBtn.setAttribute("type", "button");
+startBtn.setAttribute("class", "btn");
+startBtn.setAttribute("id", "start");
+startBtn.textContent = "Start";
+listDiv.appendChild(startBtn);
