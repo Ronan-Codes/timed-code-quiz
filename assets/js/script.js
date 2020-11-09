@@ -39,4 +39,21 @@ var qObj9 = {question: "Which of the following function of String object returns
     choices: ["toUpperCase()", "toLowerCase()", "toString()"],
     correctIndex: 0};
 
-var questions = [qObj0, qObj1, qObj2, qObj3, qObj4, qObj5, qObj6, qObj7, qObj8, qObj9
+var questions = [qObj0, qObj1, qObj2, qObj3, qObj4, qObj5, qObj6, qObj7, qObj8, qObj9;
+
+//DOM Elements
+
+var listDiv = document.getElementById("list-div");
+var cardTextDiv = document.getElementById("card-text");
+var highScoreBtn = document.getElementById("high-score");
+var timeCounter = document.getElementById("time");
+var aCheckText = document.getElementById("answer-check");
+
+//Other global variables
+var qIndex = 0;
+var timeLeft = 75;
+var win = false;
+var correct = false;
+var highScores = [];
+var hsStr ="";
+var numCorrect = 0;
